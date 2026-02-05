@@ -86,6 +86,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
+            // --- VALIDATION RULES ---
+            const nameRegex = /^[A-Za-z\s]+$/;
+            const mobileRegex = /^\d+$/;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            const messageRegex = /^[a-zA-Z0-9\s.,!?'"-]+$/; // Alphanumeric + basic punctuation
+
+            let errorMsg = '';
+
+            if (!nameRegex.test(data.name)) {
+                errorMsg = 'Name must only contain alphabets.';
+            } else if (!mobileRegex.test(data.mobile)) {
+                errorMsg = 'Mobile number must only contain digits.';
+            } else if (!emailRegex.test(data.email)) {
+                errorMsg = 'Email must be a valid @gmail.com address.';
+            } else if (!messageRegex.test(data.message)) {
+                errorMsg = 'Message must only contain alphanumeric values and basic punctuation.';
+            }
+
+            if (errorMsg) {
+                statusMsg.innerText = errorMsg;
+                statusMsg.style.color = 'red';
+                submitBtn.innerText = originalBtnText;
+                submitBtn.classList.remove('btn-progress');
+                submitBtn.disabled = false;
+                return;
+            }
+            // ------------------------
+
             // URL of the deployed Google Apps Script Web App
             // User needs to replace this with their actual URL
             // URL of the deployed Google Apps Script Web App
