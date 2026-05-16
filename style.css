@@ -1,10 +1,10 @@
 :root {
     /* Color Palette */
     --color-mint-whisper: #D1F2EB;
-    --color-emerald-green: #50C878;
-    --color-royal-green: #0B6E4F;
+    --color-emerald-green: #17878E;
+    --color-royal-green: #0D828B ;
     /* "Royal Amethyst" per user hex, renamed to simplify */
-    --color-dark-evergreen: #013220;
+    --color-dark-evergreen: #16314A;;
     --color-white: #ffffff;
     --color-off-white: #f8fcfb;
     --color-text-dark: #1a1a1a;
@@ -80,7 +80,8 @@ img {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-royal-green);
+    background-color:#acf3e5 ;
+    color:#D1F2EB;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(80, 200, 120, 0.3);
 }
@@ -236,17 +237,19 @@ img {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-white);
-    background: var(--color-royal-green);
+    background: var(--color-dark-evergreen);
     border-radius: 50px;
     transition: var(--transition-fast);
     animation: fadeInUp 1.2s ease-out 0.4s backwards;
-    box-shadow: 0 10px 20px rgba(11, 110, 79, 0.2);
+    box-shadow: 0 10px 20px rgba(16, 134, 97, 0.2);
+    text-decoration: none;
 }
 
 .btn-cta:hover {
-    background: var(--color-dark-evergreen);
+    background: var(--color-off-white);
+    color: var(--color-white);
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(11, 110, 79, 0.3);
+    box-shadow: 0 15px 30px rgba(20, 168, 121, 0.3);
 }
 
 /* Animations */
@@ -436,13 +439,18 @@ img {
 
 .vision-box {
     background-color: var(--color-royal-green);
+    color:h2:#16314A
 }
 
-.mission-box h2,
-.vision-box h2 {
+.mission-box h2{
     color: var(--color-emerald-green);
     margin-bottom: 20px;
 }
+.vision-box h2 {
+    color: var(--color-dark-evergreen);
+    margin-bottom: 20px;
+}
+
 
 .mission-box p,
 .vision-box p {
@@ -707,5 +715,15 @@ footer {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .service-front::after {
+        content: 'Click here for more details';
+        display: block;
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: rgba(13, 130, 139, 0.85);
+        font-weight: 500;
+        letter-spacing: 0.01em;
     }
 }
